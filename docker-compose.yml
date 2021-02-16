@@ -1,0 +1,17 @@
+version: "3"
+services:
+  sinatra:
+    build: .
+    image: dialer
+    ports:
+      - "9292:9292"
+    command: ["rackup", "config.ru"]
+    env_file: ".env"
+    environment:
+      - RACK_ENV=production
+
+  relay:
+    build: .
+    image: dialer
+    command: ["ruby", "consumer.rb"]
+    env_file: ".env"

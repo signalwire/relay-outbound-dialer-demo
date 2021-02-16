@@ -26,7 +26,6 @@ function ready(callback) {
 
 function startCalls(e) {
   formSubmit('/start', {numbers: document.getElementById('numbers').value})
-  document.getElementById('startCalls').disabled = true;
 }
 
 function formSubmit(url, body) {
